@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2b1055"/>
+      <stop offset="45%" stop-color="#8a2b7a"/>
+      <stop offset="70%" stop-color="#f06b3f"/>
+      <stop offset="100%" stop-color="#ffb347"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2a6c"/>
+      <stop offset="60%" stop-color="#0f2027"/>
+      <stop offset="100%" stop-color="#09131a"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff2b0"/>
+      <stop offset="55%" stop-color="#ffd36a"/>
+      <stop offset="100%" stop-color="#ff9b3d"/>
+    </radialGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd36a" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffd36a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#sky)"/>
+
+  <circle cx="400" cy="230" r="70" fill="url(#sun)"/>
+  <rect x="300" y="240" width="200" height="130" fill="url(#glow)"/>
+
+  <rect y="280" width="800" height="170" fill="url(#sea)"/>
+
+  <path d="M0 300 C120 290 240 310 360 300 C480 290 600 310 720 300 C760 298 780 299 800 300 L800 450 L0 450 Z"
+        fill="#0b1a24" opacity="0.55"/>
+
+  <g fill="#f2a35c" opacity="0.45">
+    <ellipse cx="120" cy="120" rx="60" ry="18"/>
+    <ellipse cx="210" cy="140" rx="80" ry="22"/>
+    <ellipse cx="600" cy="110" rx="70" ry="20"/>
+    <ellipse cx="680" cy="145" rx="85" ry="24"/>
+  </g>
+
+  <path d="M0 350 C120 330 240 370 360 350 C480 330 600 370 720 350 C760 347 780 348 800 350"
+        stroke="#ffd36a" stroke-opacity="0.35" stroke-width="4" fill="none"/>
+  <path d="M0 380 C120 360 240 400 360 380 C480 360 600 400 720 380 C760 377 780 378 800 380"
+        stroke="#ffb347" stroke-opacity="0.25" stroke-width="3" fill="none"/>
+</svg>
