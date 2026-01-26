@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1b2a6b"/>
+      <stop offset="55%" stop-color="#f06b41"/>
+      <stop offset="100%" stop-color="#f7b25c"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2c3e80"/>
+      <stop offset="100%" stop-color="#0f1f4a"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff5b5"/>
+      <stop offset="60%" stop-color="#ffd36b"/>
+      <stop offset="100%" stop-color="#f28c3a"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#sky)"/>
+  <rect y="260" width="800" height="190" fill="url(#water)"/>
+  <circle cx="400" cy="260" r="70" fill="url(#sun)"/>
+  <ellipse cx="400" cy="270" rx="110" ry="18" fill="#f7c36d" opacity="0.45"/>
+  <ellipse cx="400" cy="285" rx="160" ry="14" fill="#f2a95a" opacity="0.35"/>
+  <ellipse cx="400" cy="300" rx="210" ry="10" fill="#e48b4a" opacity="0.25"/>
+  <path d="M0 230 C120 210 210 210 340 230 C470 250 560 250 800 230 L800 260 L0 260 Z" fill="#2e1d3d" opacity="0.45"/>
+  <path d="M60 110 C120 90 180 90 240 110 C300 130 360 130 420 110 C480 90 540 90 600 110 C660 130 720 130 780 110" fill="none" stroke="#f5b06a" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+</svg>
