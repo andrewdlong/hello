@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Done Cooking Temps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rye&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #111;
+      --paper: #fff;
+      --rule: #222;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .label {
+      width: 720px;
+      background: var(--paper);
+      color: var(--ink);
+      padding: 28px;
+      position: relative;
+    }
+    .outer {
+      border: 4px solid var(--ink);
+      padding: 10px;
+    }
+    .inner {
+      border: 2px solid var(--ink);
+      padding: 22px 26px 18px;
+      position: relative;
+    }
+    /* Rope-like double frame corners */
+    .corner {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border: 3px solid var(--ink);
+    }
+    .corner.tl { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+    .corner.tr { top: 6px; right: 6px; border-left: none; border-bottom: none; }
+    .corner.bl { bottom: 6px; left: 6px; border-right: none; border-top: none; }
+    .corner.br { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .star {
+      font-size: 14px;
+      line-height: 1;
+    }
+    h1 {
+      font-family: "Rye", "Liberation Serif", serif;
+      font-size: 34px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-align: center;
+      line-height: 1.1;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 8px 0 14px;
+    }
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--ink);
+    }
+    .divider .diamond {
+      width: 8px;
+      height: 8px;
+      border: 1.5px solid var(--ink);
+      transform: rotate(45deg);
+      flex: 0 0 auto;
+    }
+
+    .thermo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .thermo svg { display: block; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: "Libre Baskerville", "Liberation Serif", serif;
+      font-size: 15px;
+    }
+    thead th {
+      font-family: "Rye", "Liberation Serif", serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      text-align: left;
+      padding: 4px 8px 8px;
+      border-bottom: 2px solid var(--ink);
+    }
+    thead th:last-child { text-align: right; }
+    tbody td {
+      padding: 5px 8px;
+      border-bottom: 1px dotted #444;
+      vertical-align: baseline;
+    }
+    tbody td:last-child {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+    tr.section td {
+      font-family: "Rye", "Liberation Serif", serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding-top: 12px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid var(--ink);
+      background: #f4f4f4;
+    }
+    tr.section td:last-child {
+      text-align: left;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      color: #333;
+    }
+    tr.note td {
+      border-bottom: none;
+      font-size: 12px;
+      font-style: italic;
+      padding-top: 12px;
+      text-align: center;
+    }
+    .foot {
+      margin-top: 10px;
+      text-align: center;
+      font-family: "Libre Baskerville", "Liberation Serif", serif;
+      font-size: 11px;
+      line-height: 1.45;
+      border-top: 1px solid var(--ink);
+      padding-top: 10px;
+    }
+    .horseshoe {
+      display: inline-block;
+      margin: 0 6px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="label" id="label">
+    <div class="outer">
+      <div class="inner">
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+
+        <div class="title-row">
+          <span class="star">★</span>
+          <h1>DONE COOKING TEMPS</h1>
+          <span class="star">★</span>
+        </div>
+
+        <div class="divider"><span class="diamond"></span></div>
+
+        <div class="thermo" aria-hidden="true">
+          <svg width="54" height="70" viewBox="0 0 54 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="22" y="4" width="10" height="42" rx="5" stroke="#111" stroke-width="2.2" fill="#fff"/>
+            <circle cx="27" cy="54" r="12" stroke="#111" stroke-width="2.2" fill="#fff"/>
+            <rect x="25" y="18" width="4" height="36" rx="2" fill="#111"/>
+            <circle cx="27" cy="54" r="5" fill="#111"/>
+            <line x1="34" y1="12" x2="40" y2="12" stroke="#111" stroke-width="1.5"/>
+            <line x1="34" y1="20" x2="38" y2="20" stroke="#111" stroke-width="1.5"/>
+            <line x1="34" y1="28" x2="40" y2="28" stroke="#111" stroke-width="1.5"/>
+            <line x1="34" y1="36" x2="38" y2="36" stroke="#111" stroke-width="1.5"/>
+          </svg>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Temp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="section">
+              <td>BEEF</td>
+              <td>internal</td>
+            </tr>
+            <tr>
+              <td>Rare</td>
+              <td>125°F</td>
+            </tr>
+            <tr>
+              <td>Medium</td>
+              <td>145°F</td>
+            </tr>
+            <tr>
+              <td>Well Done</td>
+              <td>160°F</td>
+            </tr>
+
+            <tr class="section">
+              <td>FISH</td>
+              <td>medium-rare–medium</td>
+            </tr>
+            <tr>
+              <td>Sockeye &amp; Coho Salmon</td>
+              <td>120–125°F</td>
+            </tr>
+            <tr>
+              <td>Pacific Halibut</td>
+              <td>130–135°F</td>
+            </tr>
+            <tr>
+              <td>Pacific Cod</td>
+              <td>130–135°F</td>
+            </tr>
+            <tr>
+              <td>Rockfish</td>
+              <td>130–135°F</td>
+            </tr>
+            <tr>
+              <td>Sablefish</td>
+              <td>135°F</td>
+            </tr>
+            <tr>
+              <td>Fully cooked (FDA)</td>
+              <td>145°F</td>
+            </tr>
+
+            <tr class="section">
+              <td>PORK</td>
+              <td>internal</td>
+            </tr>
+            <tr>
+              <td>Done</td>
+              <td>145°F</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="foot">
+          <span class="horseshoe">★</span>
+          Probe the <strong>center</strong> of the <strong>thickest part</strong>.
+          <span class="horseshoe">★</span><br />
+          Do not hit the pan or the thin edge.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
