@@ -10,9 +10,12 @@
     :root {
       --ink: #111;
       --paper: #fff;
-      --rule: #222;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    @page {
+      size: letter;
+      margin: 0.4in;
+    }
     body {
       background: #ddd;
       display: flex;
@@ -20,100 +23,93 @@
       justify-content: center;
       min-height: 100vh;
     }
+    @media print {
+      body { background: #fff; min-height: auto; }
+      .label { box-shadow: none; }
+    }
     .label {
-      width: 780px;
+      width: 7.5in;
       background: var(--paper);
       color: var(--ink);
-      padding: 28px;
+      padding: 0.2in;
       position: relative;
     }
     .outer {
-      border: 4px solid var(--ink);
-      padding: 10px;
+      border: 5px solid var(--ink);
+      padding: 0.1in;
     }
     .inner {
-      border: 2px solid var(--ink);
-      padding: 22px 26px 18px;
+      border: 2.5px solid var(--ink);
+      padding: 0.22in 0.28in 0.18in;
       position: relative;
     }
-    /* Rope-like double frame corners */
     .corner {
       position: absolute;
-      width: 28px;
-      height: 28px;
+      width: 0.28in;
+      height: 0.28in;
       border: 3px solid var(--ink);
     }
-    .corner.tl { top: 6px; left: 6px; border-right: none; border-bottom: none; }
-    .corner.tr { top: 6px; right: 6px; border-left: none; border-bottom: none; }
-    .corner.bl { bottom: 6px; left: 6px; border-right: none; border-top: none; }
-    .corner.br { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+    .corner.tl { top: 0.06in; left: 0.06in; border-right: none; border-bottom: none; }
+    .corner.tr { top: 0.06in; right: 0.06in; border-left: none; border-bottom: none; }
+    .corner.bl { bottom: 0.06in; left: 0.06in; border-right: none; border-top: none; }
+    .corner.br { bottom: 0.06in; right: 0.06in; border-left: none; border-top: none; }
 
     .title-row {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 14px;
-      margin-bottom: 10px;
+      gap: 0.12in;
+      margin-bottom: 0.06in;
     }
-    .star {
-      font-size: 14px;
-      line-height: 1;
-    }
+    .star { font-size: 22pt; line-height: 1; }
     h1 {
       font-family: "Rye", "Liberation Serif", serif;
-      font-size: 34px;
+      font-size: 34pt;
       font-weight: 400;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       text-align: center;
-      line-height: 1.1;
+      line-height: 1.05;
     }
     .divider {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin: 8px 0 14px;
+      gap: 0.1in;
+      margin: 0.06in 0 0.1in;
     }
     .divider::before,
     .divider::after {
       content: "";
       flex: 1;
-      height: 1px;
+      height: 2px;
       background: var(--ink);
     }
     .divider .diamond {
-      width: 8px;
-      height: 8px;
-      border: 1.5px solid var(--ink);
+      width: 9px;
+      height: 9px;
+      border: 2px solid var(--ink);
       transform: rotate(45deg);
       flex: 0 0 auto;
     }
-
-    .thermo {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 12px;
-    }
-    .thermo svg { display: block; }
 
     table {
       width: 100%;
       border-collapse: collapse;
       font-family: "Libre Baskerville", "Liberation Serif", serif;
-      font-size: 20px;
+      font-size: 22pt;
     }
     thead th {
       font-family: "Rye", "Liberation Serif", serif;
-      font-size: 16px;
+      font-size: 16pt;
       font-weight: 400;
       letter-spacing: 0.5px;
       text-align: left;
-      padding: 6px 8px 10px;
-      border-bottom: 2px solid var(--ink);
+      padding: 0.04in 0.06in 0.08in;
+      border-bottom: 2.5px solid var(--ink);
     }
     thead th:last-child { text-align: right; }
     tbody td {
-      padding: 8px 8px;
-      border-bottom: 1px dotted #444;
+      padding: 0.09in 0.06in;
+      border-bottom: 1.5px dotted #444;
       vertical-align: baseline;
     }
     tbody td:last-child {
@@ -121,44 +117,36 @@
       font-variant-numeric: tabular-nums;
       white-space: nowrap;
       font-weight: 700;
-      font-size: 21px;
+      font-size: 24pt;
     }
     tr.section td {
       font-family: "Rye", "Liberation Serif", serif;
-      font-size: 18px;
+      font-size: 18pt;
       letter-spacing: 1px;
-      padding-top: 14px;
-      padding-bottom: 6px;
-      border-bottom: 1.5px solid var(--ink);
+      padding-top: 0.14in;
+      padding-bottom: 0.06in;
+      border-bottom: 2px solid var(--ink);
       background: #f4f4f4;
     }
     tr.section td:last-child {
       text-align: left;
       font-weight: 400;
-      font-size: 13px;
-      letter-spacing: 0.5px;
+      font-size: 12pt;
+      letter-spacing: 0.4px;
       color: #333;
     }
-    tr.note td {
-      border-bottom: none;
-      font-size: 12px;
-      font-style: italic;
-      padding-top: 12px;
-      text-align: center;
-    }
     .foot {
-      margin-top: 12px;
+      margin-top: 0.12in;
       text-align: center;
       font-family: "Libre Baskerville", "Liberation Serif", serif;
-      font-size: 14px;
-      line-height: 1.45;
-      border-top: 1px solid var(--ink);
-      padding-top: 10px;
+      font-size: 13pt;
+      line-height: 1.4;
+      border-top: 2px solid var(--ink);
+      padding-top: 0.1in;
     }
-    .horseshoe {
+    .mark {
       display: inline-block;
-      margin: 0 6px;
-      font-size: 13px;
+      margin: 0 0.05in;
     }
   </style>
 </head>
@@ -178,19 +166,6 @@
         </div>
 
         <div class="divider"><span class="diamond"></span></div>
-
-        <div class="thermo" aria-hidden="true">
-          <svg width="54" height="70" viewBox="0 0 54 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="22" y="4" width="10" height="42" rx="5" stroke="#111" stroke-width="2.2" fill="#fff"/>
-            <circle cx="27" cy="54" r="12" stroke="#111" stroke-width="2.2" fill="#fff"/>
-            <rect x="25" y="18" width="4" height="36" rx="2" fill="#111"/>
-            <circle cx="27" cy="54" r="5" fill="#111"/>
-            <line x1="34" y1="12" x2="40" y2="12" stroke="#111" stroke-width="1.5"/>
-            <line x1="34" y1="20" x2="38" y2="20" stroke="#111" stroke-width="1.5"/>
-            <line x1="34" y1="28" x2="40" y2="28" stroke="#111" stroke-width="1.5"/>
-            <line x1="34" y1="36" x2="38" y2="36" stroke="#111" stroke-width="1.5"/>
-          </svg>
-        </div>
 
         <table>
           <thead>
@@ -226,15 +201,7 @@
               <td>120–125°F</td>
             </tr>
             <tr>
-              <td>Pacific Halibut</td>
-              <td>130–135°F</td>
-            </tr>
-            <tr>
-              <td>Pacific Cod</td>
-              <td>130–135°F</td>
-            </tr>
-            <tr>
-              <td>Rockfish</td>
+              <td>Halibut / Cod / Rockfish</td>
               <td>130–135°F</td>
             </tr>
             <tr>
@@ -258,9 +225,9 @@
         </table>
 
         <div class="foot">
-          <span class="horseshoe">★</span>
+          <span class="mark">★</span>
           Probe the <strong>center</strong> of the <strong>thickest part</strong>.
-          <span class="horseshoe">★</span><br />
+          <span class="mark">★</span><br />
           Do not hit the pan or the thin edge.
         </div>
       </div>
